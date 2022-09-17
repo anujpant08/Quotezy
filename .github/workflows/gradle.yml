@@ -35,5 +35,3 @@ jobs:
     #Execute unit tests
     - name: Android Unit Tests
       run: ./gradlew test
-    - name: Java Unit Tests
-      run: ./gradlew connectedAndroidTest
