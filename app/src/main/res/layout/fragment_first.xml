@@ -4,25 +4,157 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/offWhite"
     tools:context=".fragment.FirstFragment">
 
     <TextView
-        android:id="@+id/textview_first"
-        android:layout_width="wrap_content"
+        android:id="@+id/title_text"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello_first_fragment"
-        app:layout_constraintBottom_toTopOf="@id/button_first"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"
+        android:fontFamily="@font/nunito_sans_semibold"
+        android:text="@string/app_name"
+        android:textColor="@color/design_default_color_secondary"
+        android:textSize="50sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/button_first"
+    </TextView>
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chip_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/title_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:singleSelection="true"
+        app:chipSpacingHorizontal="16dp"
+        app:chipSpacingVertical="12dp"
+        android:padding ="16dp">
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.App.Chip"
+            android:id="@+id/success_chip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/success_text">
+
+        </com.google.android.material.chip.Chip>
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.App.Chip"
+            android:id="@+id/inspirational_chip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/inspirational"
+            android:fontFamily="@font/nunito_sans">
+
+        </com.google.android.material.chip.Chip>
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.App.Chip"
+            android:id="@+id/famous_chip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/famousQuotes"
+            android:fontFamily="@font/nunito_sans">
+
+        </com.google.android.material.chip.Chip>
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.App.Chip"
+            android:id="@+id/life_chip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/life"
+            android:fontFamily="@font/nunito_sans">
+
+        </com.google.android.material.chip.Chip>
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.App.Chip"
+            android:id="@+id/science_chip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/science"
+            android:fontFamily="@font/nunito_sans">
+
+        </com.google.android.material.chip.Chip>
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.App.Chip"
+            android:id="@+id/humor_chip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/humor"
+            android:fontFamily="@font/nunito_sans">
+
+        </com.google.android.material.chip.Chip>
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.App.Chip"
+            android:id="@+id/philosophy_chip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/philosophy"
+            android:fontFamily="@font/nunito_sans">
+
+        </com.google.android.material.chip.Chip>
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.App.Chip"
+            android:id="@+id/sports_chip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sports"
+            android:fontFamily="@font/nunito_sans">
+
+        </com.google.android.material.chip.Chip>
+
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <TextView
+        android:id="@+id/quote_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:padding="8dp"
+        android:textSize="26sp"
+        android:text="@string/sampleQuote"
+        android:textColor="@color/teal_200"
+        android:gravity="center"
+        android:fontFamily="@font/nunito_sans"
+        app:layout_constraintTop_toBottomOf="@id/chip_group" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/author_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        android:textSize="18sp"
+        android:text="@string/sampleAuthor"
+        android:gravity="center"
+        android:fontFamily="@font/nunito_sans"
+        app:layout_constraintTop_toBottomOf="@id/quote_text" >
+    </TextView>
+
+    <com.google.android.material.chip.Chip
+        style="@style/Widget.App.Share.Chip"
+        android:id="@+id/share_chip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/next"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/share"
+        android:fontFamily="@font/nunito_sans"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_first" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/author_text"
+        app:layout_constraintBottom_toBottomOf="parent" >
+
+    </com.google.android.material.chip.Chip>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

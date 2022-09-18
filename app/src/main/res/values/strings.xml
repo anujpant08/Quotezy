@@ -9,4 +9,24 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <!-- Strings for in-app text content -->
+
+    <!-- Chip String values -->
+    <string name="success_text">Success</string>
+    <string name="motivational">Motivational</string>
+    <string name="life">Life</string>
+    <string name="inspirational">Inspirational</string>
+    <string name="sports">Sports</string>
+    <string name="change">Change</string>
+    <string name="humor">Humor</string>
+    <string name="science">Science</string>
+    <string name="philosophy">Philosophy</string>
+    <string name="famousQuotes">Popular</string>
+    <string name="share">Share</string>
+
+    <!-- Quotes text -->
+    <string name="sampleQuote">\"This is a sample quote.\"</string>
+    <string name="sampleAuthor">- by Anonymous</string>
+
 </resources>
