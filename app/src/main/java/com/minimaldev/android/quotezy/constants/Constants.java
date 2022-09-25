@@ -32,4 +32,6 @@ public class Constants {
 
     //Utils
     public static final String EMPTY = "";
+
+    public static final String ERROR_RESPONSE = "Ahh no motivation! Looks like an error has occurred :/";
 }

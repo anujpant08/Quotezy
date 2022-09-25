@@ -28,5 +28,6 @@
     <!-- Quotes text -->
     <string name="sampleQuote">\"This is a sample quote.\"</string>
     <string name="sampleAuthor">- by Anonymous</string>
+    <string name="shareMessage">Share it and spread positivity :)</string>
 
 </resources>
