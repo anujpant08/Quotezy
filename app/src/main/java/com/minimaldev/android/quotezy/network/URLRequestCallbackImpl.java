@@ -1,5 +1,7 @@
 package com.minimaldev.android.quotezy.network;
 
+import static com.minimaldev.android.quotezy.constants.Constants.ERROR_RESPONSE;
+
 import android.util.Log;
 
 import com.minimaldev.android.quotezy.fragment.FirstFragment;
@@ -52,5 +54,6 @@ public class URLRequestCallbackImpl extends UrlRequest.Callback {
     @Override
     public void onFailed(UrlRequest request, UrlResponseInfo info, CronetException error) {
         Log.e(TAG, "Request failed due to: ", error);
+        this.fragment.setQuoteTagResponse(ERROR_RESPONSE);
     }
 }

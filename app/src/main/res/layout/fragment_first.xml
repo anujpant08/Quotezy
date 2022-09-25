@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:fontFamily="@font/nunito_sans_semibold"
+        android:fontFamily="@font/nunito_sans"
         android:text="@string/app_name"
         android:textColor="@color/design_default_color_secondary"
         android:textSize="50sp"
@@ -127,7 +127,8 @@
         android:textColor="@color/teal_200"
         android:gravity="center"
         android:fontFamily="@font/nunito_sans"
-        app:layout_constraintTop_toBottomOf="@id/chip_group" >
+        app:layout_constraintTop_toBottomOf="@id/chip_group"
+        app:layout_constraintBottom_toTopOf="@id/share_chip">
     </TextView>
 
     <TextView
@@ -140,7 +141,7 @@
         android:text="@string/sampleAuthor"
         android:gravity="center"
         android:fontFamily="@font/nunito_sans"
-        app:layout_constraintTop_toBottomOf="@id/quote_text" >
+        app:layout_constraintTop_toBottomOf="@id/quote_text">
     </TextView>
 
     <com.google.android.material.chip.Chip
@@ -153,8 +154,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/author_text"
-        app:layout_constraintBottom_toBottomOf="parent" >
+        app:layout_constraintBottom_toTopOf="@id/share_text" >
 
     </com.google.android.material.chip.Chip>
+
+    <TextView
+        android:id="@+id/share_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:fontFamily="@font/nunito_sans"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:text="@string/shareMessage"
+        app:layout_constraintTop_toBottomOf="@id/share_chip"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+    </TextView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

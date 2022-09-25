@@ -4,6 +4,7 @@ import static com.minimaldev.android.quotezy.constants.Constants.AUTHOR;
 import static com.minimaldev.android.quotezy.constants.Constants.BY;
 import static com.minimaldev.android.quotezy.constants.Constants.CONTENT;
 import static com.minimaldev.android.quotezy.constants.Constants.EMPTY;
+import static com.minimaldev.android.quotezy.constants.Constants.ERROR_RESPONSE;
 import static com.minimaldev.android.quotezy.constants.Constants.FAMOUS_QUOTES;
 import static com.minimaldev.android.quotezy.constants.Constants.POPULAR;
 import static com.minimaldev.android.quotezy.constants.Constants.TAGS;
@@ -28,6 +29,7 @@ import com.minimaldev.android.quotezy.model.Quote;
 import com.minimaldev.android.quotezy.service.QuoteServiceImpl;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -64,6 +66,7 @@ public class FirstFragment extends Fragment implements ISetResponse {
             prepareChipsListenerRequest(view);
         } catch (Exception e){
             Log.e(TAG, "An exception occurred at onViewCreated() : ", e);
+            createErrorQuote();
         }
     }
 
@@ -107,8 +110,19 @@ public class FirstFragment extends Fragment implements ISetResponse {
 
     @Override
     public void setQuoteTagResponse(String response) {
-        Quote quote = parseResponse(response);
+        Quote quote = new Quote();
+        if(ERROR_RESPONSE.equalsIgnoreCase(response)){
+            quote = createErrorQuote();
+        }else{
+            quote = parseResponse(response);
+        }
         this.response.postValue(quote);
+    }
+
+    private Quote createErrorQuote() {
+        Quote error = new Quote();
+        error.setText(ERROR_RESPONSE);
+        return error;
     }
 
     private Quote parseResponse(String response) {
@@ -126,6 +140,7 @@ public class FirstFragment extends Fragment implements ISetResponse {
             Log.d(TAG, "Final quote : " + quote);
         } catch (Exception e){
             Log.e(TAG, "An exception occurred while parsing json : ", e);
+            return createErrorQuote();
         }
         return quote;
     }

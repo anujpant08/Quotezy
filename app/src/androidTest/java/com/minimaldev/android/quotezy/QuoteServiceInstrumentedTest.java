@@ -32,7 +32,7 @@ import com.minimaldev.android.quotezy.service.QuoteServiceImpl;
 import java.util.concurrent.Executors;
 
 @RunWith(MockitoJUnitRunner.class)
-public class ExampleInstrumentedTest {
+public class QuoteServiceInstrumentedTest {
 
     private Context appContext;
 
